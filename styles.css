@@ -1,0 +1,116 @@
+/*libraries*/
+:root {
+    --background: #F6F7FC;
+    --alt-background: #D9D9D9;
+    --text: #080A17;
+    --primary: #5360B0;
+
+    --h1-size: 64px;
+    --h2-size: 48px;
+    --h3-size: 36px;
+    --h4-size: 30px;
+    --p-size: 18px;
+    --small-size: 14px;
+
+}
+
+h1 {
+    font-size: var(--h1-size);
+}
+
+h2 {
+    font-size: var(--h2-size);
+}
+
+h3 {
+    font-size: var(--h3-size);
+}
+
+h4 {
+    font-size: var(--h4-size);
+}
+
+p {
+    font-size: var(--p-size);
+}
+
+small {
+    font-size: var(--small-size);
+}
+
+body {
+    background-color: var(--background);
+    margin: 0;
+}
+
+* {
+    font-family: "Shippori Antique", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+/*nav bar*/
+#navbar * {
+    padding: 0;
+    margin: 0;
+}
+#navbar {
+    display: flex;
+    position: fixed;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.10);
+    justify-content: space-between;
+    padding: 10px 50px;
+    width: 100%;
+    box-sizing: border-box;
+    color: var(--background);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: inherit; /* Ensure link takes the color of its parent */
+}
+
+.navbar ul {
+    list-style: none; /* Removes bullets */
+    display: flex;
+    gap: 30px; /* Adds spacing between links */
+    margin: 0;
+    padding: 0;
+}
+
+/*hero section*/
+#hero {
+    position: relative; /* Needed for layering */
+    height: 100vh; /* Full viewport height */
+    color: white; /* Text color for better contrast */
+    background-image: url('./images/hero.jpg'); /* Replace with your image path */
+    background-size: cover; /* Ensures the image covers the section */
+    background-position: center; /* Centers the image */
+  }
+  
+  #hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with 50% opacity */
+    z-index: 1; /* Place the overlay above the image */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+    line-height: 0.3;
+  }
+
+  #hero .overlay > * {
+    padding-left: 150px;
+  }
