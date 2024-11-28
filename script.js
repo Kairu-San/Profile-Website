@@ -1,3 +1,5 @@
+/*Navbar Section*/
+
 const navbar = document.getElementById("navbar");
 const heroSection = document.getElementById("hero");
 const aboutSection = document.getElementById("about");
@@ -40,3 +42,37 @@ window.addEventListener("scroll", () => {
     contactLink.classList.add("active");
   }
 });
+
+/* Portfolio Section */
+const buttons = document.querySelectorAll('#portfolio .buttons button');
+const images = document.querySelectorAll('#portfolio .images > .pic');
+
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        // Remove 'active' class from all buttons
+        buttons.forEach((btn) => btn.classList.remove('active'));
+        // Add 'active' class to the clicked button
+        button.classList.add('active');
+
+        // Get the category from the button's text content
+        const category = button.textContent.toLowerCase();
+
+        // Filter images based on the category
+        images.forEach((image) => {
+            if (category === 'all' || image.classList.contains(category)) {
+                // Show matching category images
+                image.classList.remove('hidden');
+            } else {
+                // Hide non-matching category images
+                image.classList.add('hidden');
+            }
+        });
+    });
+});
+
+
+
+
+
+
+

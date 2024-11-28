@@ -1,7 +1,7 @@
 /*libraries*/
 :root {
   --background: #f6f7fc;
-  --alt-background: #d9d9d9;
+  --alt-background: #f3f3f3;
   --text: #080a17;
   --primary: #5360b0;
 
@@ -15,6 +15,7 @@
 
 h1 {
   font-size: var(--h1-size);
+  margin: 0;
 }
 
 h2 {
@@ -46,6 +47,7 @@ body {
   font-family: "Shippori Antique", sans-serif;
   font-weight: 400;
   font-style: normal;
+  box-sizing: border-box;
 }
 
 /*nav bar*/
@@ -156,7 +158,7 @@ body {
   justify-content: center;
   align-items: flex-start;
   text-align: center;
-  line-height: 0.3;
+  line-height: 1.2;
 }
 
 #hero .overlay > * {
@@ -166,10 +168,14 @@ body {
 /*about section*/
 
 #about {
-  height: 110vh;
+  height: 100vh;
   background-color: var(--background);
   padding: 240px 100px;
   box-sizing: border-box;
+}
+
+#about {
+    padding-top: 25vh;
 }
 
 .about {
@@ -194,6 +200,11 @@ body {
 .about img {
   border-radius: 10px;
   border: 10px solid var(--primary);
+  transition: transform ease 0.2s;
+}
+
+.about img:hover{
+  transform: rotate(-2deg);
 }
 
 .label {
@@ -209,10 +220,174 @@ body {
     height: 100vh;
 }
 
-#portfolio.section{
+#portfolio.section {
     display: flex;
     flex-direction: column;
     align-items: center;
     color: var(--primary);
+    padding-top: 17vh;
+    background-color: var(--background);
 }
 
+#portfolio button {
+    border-radius: 5px;
+    background-color: var(--primary);
+    border: 0;
+    height: 50px;
+    width: 160px;
+    font-size: 24px;
+    color: var(--background);
+    margin: 30px 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#portfolio button:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+}
+
+#portfolio button:active {
+    transform: scale(0.9);
+}
+
+#portfolio .images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1000px;
+    gap: 15px;
+}
+
+#portfolio .images > .pic img {
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    border: solid 5px;
+    border-color: var(--primary)
+}
+
+#portfolio .images > .pic img:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+}
+
+#portfolio .images > .pic img:active {
+  transform: scale(1.0);
+  transition: transform 0.2s ease;
+}
+
+.pic {
+  display: block;
+  animation: SclAnimation .5s ease;
+}
+
+@keyframes SclAnimation {
+    0%{
+      transform: scale(0);
+    }
+    100%{
+      transform: scale(1);
+    }
+}
+
+.pic.hidden {
+  display: none;
+}
+
+#portfolio button.active {
+    background-color: var(--background);
+    color: var(--primary);
+    border: 3.2px solid var(--primary);
+}
+
+/*Contact Section*/
+#contact {
+  height: 100vh;
+}
+
+#contact.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--primary);
+  padding-top: 17vh;
+  background-color: var(--background);
+  gap: 30px;
+}
+
+#contact input{
+  border: 3px solid var(--primary);
+  border-radius: 5px;
+  font-size: var(--p-size);
+  box-sizing: border-box;
+  padding: 5px 10px;
+  transition: all ease 0.3s;
+}
+
+#contact input:focus{
+  transform: scale(1.02);
+}
+
+.contact.ne{
+  display: flex;
+  gap: 30px;
+  width: 62.5%;
+}
+
+input[name="name"] {
+    width: 60%;
+}
+
+input[name="email"] {
+  width: 40%;
+}
+
+.contact.sms{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 62.5%;
+}
+
+.contact.sms textarea{
+  border: 3px solid var(--primary);
+  border-radius: 5px;
+  font-size: var(--p-size);
+  box-sizing: border-box;
+  padding: 5px 10px;
+  height: 100px;
+  max-height: 250px;
+  min-height: 40px;
+  max-width: 100%;
+  min-width: 100%;   
+  overflow: auto; 
+  transition: background-color ease 0.3s, border-color ease 0.3s, color ease 0.3s, transform ease 0.3s;
+}
+
+.contact.sms textarea:focus{
+  transform: scale(1.02);
+}
+
+#contact button{
+  width: 20%;
+  background-color: var(--primary);
+  color: var(--background);
+  border: 3px solid var(--primary);
+  border-radius: 5px;
+  font-size: var(--p-size);
+  padding: 3px 0px;
+  transition: all ease 0.2s;
+}
+
+#contact button:hover{
+    transform: scale(1.05);
+}
+
+#contact button:active{
+  transform: scale(1);
+}
+
+*,*:focus{
+  outline:none;
+}
+
+/*Footer Section*/
