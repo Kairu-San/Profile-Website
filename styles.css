@@ -43,6 +43,18 @@ body {
   margin: 0;
 }
 
+html {
+  scroll-behavior: smooth; /* Enables smooth scrolling */
+}
+
+.section {
+  scroll-snap-align: start; /* Align the sections to the start of the viewport */
+}
+
+body {
+  scroll-snap-type: y mandatory; /* Enables vertical scroll snapping */
+}
+
 * {
   font-family: "Shippori Antique", sans-serif;
   font-weight: 400;
@@ -165,13 +177,21 @@ body {
   padding-left: 150px;
 }
 
+#hero h1 {
+  font-size: 4.5vw; /* Adjust the size of the main heading based on viewport width */
+}
+
+#hero h3 {
+  font-size: 2.5vw; /* Adjust the size of subheadings */
+}
 
 /*about section*/
 
 #about {
-  height: 100vh;
+  min-height: 100vh;
+  width: auto;
   background-color: var(--background);
-  padding: 240px 100px;
+  padding: 40px 150px;
   box-sizing: border-box;
 }
 
@@ -182,6 +202,7 @@ body {
 .about {
   display: flex;
   gap: 80px;
+  
 }
 
 .text-content p {
@@ -198,10 +219,17 @@ body {
   margin-bottom: 10px; /* Add space between list items (adjust the value as needed) */
 }
 
-.about img {
+.about.img img{
   border-radius: 10px;
   border: 10px solid var(--primary);
   transition: transform ease 0.2s;
+  width: 20vw; /* Ensures the image adapts to smaller screens */
+  height: auto; /* Maintains the aspect ratio */
+}
+
+.about.img {
+  display: flex;
+  align-items: center;
 }
 
 .about img:hover{
@@ -216,9 +244,22 @@ body {
   color: #00000096; /* Set the value to a different color (e.g., Tomato) */
 }
 
+.text-content{
+  font-size: 1.1vw;
+}
+
+.about p{
+  font-size: 1.2vw;
+}
+
+.about h3{
+  font-size: 2.7vw;
+}
+
+
 /*portfolio section*/
 #portfolio {
-    height: 100vh;
+    min-height: 100vh;
 }
 
 #portfolio.section {
@@ -226,7 +267,7 @@ body {
     flex-direction: column;
     align-items: center;
     color: var(--primary);
-    padding-top: 17vh;
+    padding-top: 15vh;
     background-color: var(--background);
 }
 
@@ -302,7 +343,7 @@ body {
 
 /*Contact Section*/
 #contact {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 #contact.section {
@@ -316,7 +357,7 @@ body {
 }
 
 #contact input{
-  border: 3px solid var(--primary);
+  border: 3.2px solid var(--primary);
   border-radius: 5px;
   font-size: var(--p-size);
   box-sizing: border-box;
@@ -350,13 +391,13 @@ input[name="email"] {
 }
 
 .contact.sms textarea{
-  border: 3px solid var(--primary);
+  border: 3.2px solid var(--primary);
   border-radius: 5px;
   font-size: var(--p-size);
   box-sizing: border-box;
   padding: 5px 10px;
   height: 100px;
-  max-height: 250px;
+  max-height: 240px;
   min-height: 40px;
   max-width: 100%;
   min-width: 100%;   
@@ -378,7 +419,7 @@ input[name="email"] {
   padding: 3px 0px;
   transition: all ease 0.2s;
 }
-
+ 
 #contact button:hover{
     transform: scale(1.05);
 }
@@ -400,9 +441,172 @@ input[name="email"] {
   align-items: center;
   gap: 10px;
   padding: 10px 0px;
+  margin-top: 10px;
 }
 
 #footer.section h4, #footer.section p{
   margin: 0;
   padding: 0;
+}
+
+@media (max-width: 1024px) {
+
+  /*navbar*/
+  #navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+    gap:10px;
+  }
+
+  #navbar h3{
+    font-size: 6vw;
+  }
+
+  #navbar li{
+    font-size: 4vw;
+  }
+
+  /*hero*/
+  #hero .overlay > * {
+    padding-left: 30px;
+}
+
+  #hero h1 {
+    font-size: 6vw;
+    text-align: left;
+  }
+
+  #hero h3 {
+    font-size: 4vw;
+    text-align: left;
+  }
+
+  /*about*/
+
+  #about {
+    padding: 20px;
+    padding-top: 110px;
+  }
+  
+  .text-content{
+    text-align: center;
+    font-size: 4vw;
+  }
+  
+  .about.h3{
+    text-align: center;
+  }
+
+  .about h3{
+    font-size: 5.5vw;
+  }
+
+  .about.p {
+    text-align: center;
+  }
+
+  .about p {
+    font-size: 4.4vw;
+  }
+
+  .about {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .about.img img {
+    width: 60vw;
+    height: auto;
+    border-width: 1.5vw;
+  }
+
+
+  #about h3, #about span{
+    text-wrap: wrap;
+   }
+  /*portfolio*/
+
+  #portfolio h1{
+    font-size: 10vw;
+    text-align: center;
+  }
+
+  #portfolio button {
+    width: 25vw;
+    height: 10vw;
+    font-size: 5vw;
+    border-width: 20vw;
+  }
+
+  #portfolio button.active{
+    border-width: 0.8vw;
+  }
+  #portfolio .images {
+    max-width: 100%;
+    gap: 2vw;
+  }
+
+  #portfolio .images img{
+    width: 90vw;
+    height: auto;
+  }
+
+  #portfolio .images > .pic img {
+    border-width: 1vw;
+  }
+  /*contact*/
+  #contact h1{
+    font-size: 10vw;
+  }
+
+  .contact.ne {
+    flex-direction: column;
+    gap: 20px;
+    width: 90vw;
+  }
+
+  .contact.sms {
+    width: 90vw;
+  }
+
+  #contact input, #contact textarea{
+    font-size: 5vw;
+    border-width: 0.8vw;
+    border-radius: 2vw;
+  }
+
+  #contact textarea{
+    height: 25vh;
+  }
+
+  #contact button{
+    width: 60vw;
+    height: 10vw;
+    font-size: 5vw;
+    border-radius: 2vw;
+  }
+
+  input[name="name"] {
+    width: 100%;
+  }
+
+  input[name="email"] {
+  width: 100%;
+  }
+  /*footer*/
+
+  #footer {
+    padding: 20px;
+    text-align: center;
+  }
+
+  #footer h4{
+    font-size: 5vw;
+  }
+
+  #footer p{
+    font-size: 3vw;
+  }
 }
