@@ -191,7 +191,7 @@ body {
   min-height: 100vh;
   width: auto;
   background-color: var(--background);
-  padding: 40px 150px;
+  padding: 40px 10vw;
   box-sizing: border-box;
 }
 
@@ -202,7 +202,7 @@ body {
 .about {
   display: flex;
   gap: 80px;
-  
+
 }
 
 .text-content p {
@@ -221,7 +221,7 @@ body {
 
 .about.img img{
   border-radius: 10px;
-  border: 10px solid var(--primary);
+  border: 7px solid var(--primary);
   transition: transform ease 0.2s;
   width: 20vw; /* Ensures the image adapts to smaller screens */
   height: auto; /* Maintains the aspect ratio */
@@ -338,7 +338,7 @@ body {
 #portfolio button.active {
     background-color: var(--background);
     color: var(--primary);
-    border: 3.2px solid var(--primary);
+    border: 4px solid var(--primary);
 }
 
 /*Contact Section*/
@@ -357,7 +357,7 @@ body {
 }
 
 #contact input{
-  border: 3.2px solid var(--primary);
+  border: 4px solid var(--primary);
   border-radius: 5px;
   font-size: var(--p-size);
   box-sizing: border-box;
@@ -391,12 +391,12 @@ input[name="email"] {
 }
 
 .contact.sms textarea{
-  border: 3.2px solid var(--primary);
+  border: 4px solid var(--primary);
   border-radius: 5px;
   font-size: var(--p-size);
   box-sizing: border-box;
   padding: 5px 10px;
-  height: 100px;
+  height: 25vh;
   max-height: 240px;
   min-height: 40px;
   max-width: 100%;
@@ -449,7 +449,7 @@ input[name="email"] {
   padding: 0;
 }
 
-@media (max-width: 1024px) {
+@media only screen and (max-width: 700px) {
 
   /*navbar*/
   #navbar {
@@ -556,9 +556,15 @@ input[name="email"] {
   #portfolio .images > .pic img {
     border-width: 1vw;
   }
+
+
   /*contact*/
   #contact h1{
     font-size: 10vw;
+  }
+
+  #contact{
+    padding-bottom: 6%;
   }
 
   .contact.ne {
@@ -608,5 +614,327 @@ input[name="email"] {
 
   #footer p{
     font-size: 3vw;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (orientation: landscape) {
+  #navbar{
+    flex-direction: row;
+  }
+
+  #navbar h3{
+    font-size: 4vw;
+  }
+
+  #navbar li {
+    font-size: 2vw;
+  }
+
+  #hero .overlay > * {
+    padding-left: 20px;
+}
+
+  #hero h1 {
+    font-size: 6vw;
+    text-align: left;
+  }
+
+  #hero h3 {
+    font-size: 3vw;
+    text-align: left;
+  }
+  
+  
+  #about {
+    padding: 10%;
+    padding-top: 15%;
+  }
+  
+  .text-content{
+    text-align: left;
+    font-size: 1.2vw;
+  }
+  
+  .about.h3{
+    text-align: center;
+  }
+
+  .about h3{
+    font-size: 3vw;
+  }
+
+  .about.p {
+    text-align: left;
+  }
+
+  .about p {
+    font-size: 1.4vw;
+  }
+
+  .about {
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  .about.img img {
+    width: 25vw;
+    height: auto;
+    border-width: 0.7vw;
+  }
+
+  #about h3, #about span{
+    text-wrap: wrap;
+   }
+
+   #portfolio h1{
+    font-size: 5vw;
+    text-align: center;
+    gap: 0;
+  }
+
+  #portfolio button {
+    width: 16vw;
+    height: 6vw;
+    font-size: 3vw;
+    border-width: 20vw;
+  }
+
+  #portfolio button.active{
+    border-width: 0.5vw;
+  }
+  #portfolio .images {
+    max-width: 100%;
+    gap: 2vw;
+  }
+
+  #portfolio .images img{
+    width: 30vw;
+    height: auto;
+  }
+
+  #portfolio .images > .pic img {
+    border-width: 0.5vw;
+}
+
+#contact h1{
+  font-size: 5vw;
+}
+
+#contact{
+  padding-bottom: 6%;
+}
+.contact.ne {
+  flex-direction: row;
+  gap: 20px;
+  width: 90vw;
+  padding: 0px 50px;
+}
+
+.contact.sms {
+  width: 90vw;
+  padding: 0px 50px;
+  gap: 30px;
+}
+
+#contact input, #contact textarea{
+  font-size: 2.5vw;
+  border-width: 0.5vw;
+  border-radius: 1vw;
+}
+
+#contact textarea{
+  height: 25vh;
+}
+
+#contact button{
+  width: 20vw;
+  height: 6vw;
+  font-size: 2.5vw;
+  border-radius: 1vw;
+}
+
+input[name="name"] {
+  width: 60%;
+}
+
+input[name="email"] {
+width: 40%;
+}
+
+  /*footer*/
+
+  #footer {
+    padding: 20px;
+    text-align: center;
+  }
+
+  #footer h4{
+    font-size: 3vw;
+  }
+
+  #footer p{
+    font-size: 2vw;
+  }
+}
+
+
+
+
+
+@media only screen and (min-width: 701px) and (max-width: 1024px) {
+
+   #navbar h3{
+    font-size: 4vw;
+   }
+
+   #navbar li{
+    font-size: 2vw;
+  }
+  
+  #hero .overlay > * {
+    padding-left: 80px;
+  }
+
+  #hero h1 {
+    font-size: 5vw;
+    text-align: left;
+  }
+
+  #hero h3 {
+    font-size: 2.5vw;
+    text-align: left;
+  }
+
+  #about {
+    padding: 0px 10vw;
+    padding-top: 15%;
+
+  }
+  
+  .text-content{
+    text-align: left;
+    font-size: 1.2vw;
+  }
+  
+  .about.h3{
+    text-align: center;
+  }
+
+  .about h3{
+    font-size: 2.8vw;
+  }
+
+  .about.p {
+    text-align: left;
+  }
+
+  .about p {
+    font-size: 1.3vw;
+  }
+
+  .about {
+    flex-direction: row;
+    gap: 40px;
+    padding-top: 5%;
+  }
+
+  .about.img img {
+    width: 30vw;
+    height: auto;
+    border-width: 0.8vw;
+  }
+
+  #about h3, #about span{
+    text-wrap: wrap;
+   }
+
+   #portfolio h1{
+    font-size: 5vw;
+    text-align: center;
+    gap: 0;
+  }
+
+  #portfolio button {
+    width: 14vw;
+    height: 5vw;
+    font-size: 2.5vw;
+    border-width: 20vw;
+  }
+
+  #portfolio button.active{
+    border-width: 0.4vw;
+  }
+  #portfolio .images {
+    max-width: 100%;
+    gap: 2vw;
+  }
+
+  #portfolio .images img{
+    width: 30vw;
+    height: auto;
+  }
+
+  #portfolio .images > .pic img {
+    border-width: 0.4vw;
+}
+
+#contact{
+  padding-bottom: 5%;
+}
+
+#contact h1{
+  font-size: 5vw;
+}
+
+.contact.ne {
+  flex-direction: row;
+  gap: 20px;
+  width: 90vw;
+  padding: 5px 100px;
+}
+
+.contact.sms {
+  width: 90vw;
+  padding: 5px 100px;
+}
+
+#contact input, #contact textarea{
+  font-size: 2vw;
+  border-width: 0.4vw;
+  border-radius: 1vw;
+}
+
+#contact textarea{
+  height: 25vh;
+}
+
+#contact button{
+  width: 20vw;
+  height: 4vw;
+  font-size: 2vw;
+  border-radius: 1vw;
+}
+
+input[name="name"] {
+  width: 60%;
+}
+
+input[name="email"] {
+width: 40%;
+}
+
+  /*footer*/
+
+  #footer {
+    padding: 20px;
+    text-align: center;
+  }
+
+  #footer h4{
+    font-size: 3vw;
+  }
+
+  #footer p{
+    font-size: 2vw;
   }
 }
