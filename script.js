@@ -70,7 +70,25 @@ buttons.forEach((button) => {
     });
 });
 
-
+/* Contact Section */
+const form = document.querySelector('form');
+form.addEventListener('submit', e => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', form.action, true);
+    xhr.setRequestHeader('Accept', 'application/json');
+    xhr.onreadystatechange = () => {
+        if (xhr.readyState !== XMLHttpRequest.DONE) return;
+        if (xhr.status === 200) {
+            form.reset();
+            alert('Thank you for your message. I will get back to you soon.');
+        } else {
+            alert('Sorry, there was an error. Please try again later.');
+        }
+    };
+    xhr.send(formData);
+});
 
 
 
