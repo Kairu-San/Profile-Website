@@ -223,7 +223,7 @@ body {
   border-radius: 10px;
   border: 7px solid var(--primary);
   transition: transform ease 0.2s;
-  width: 20vw; /* Ensures the image adapts to smaller screens */
+  width: 30vw; /* Ensures the image adapts to smaller screens */
   height: auto; /* Maintains the aspect ratio */
 }
 
@@ -296,11 +296,15 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    height: 400px;
     max-width: 1000px;
     gap: 15px;
 }
 
 #portfolio .images > .pic img {
+    object-fit: cover;
+    width: 300px;
+    height: 175px;
     border-radius: 8px;
     transition: transform 0.3s ease;
     border: solid 5px;
@@ -938,3 +942,5 @@ width: 40%;
     font-size: 2vw;
   }
 }
+
+
